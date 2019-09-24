@@ -1,4 +1,4 @@
-package com.consdata.solejnik.newssearch.config;
+package com.consdata.solejnik.newssearch.externalapi.config;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;

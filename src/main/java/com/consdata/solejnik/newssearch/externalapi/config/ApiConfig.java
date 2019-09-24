@@ -1,4 +1,4 @@
-package com.consdata.solejnik.newssearch.config;
+package com.consdata.solejnik.newssearch.externalapi.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +16,7 @@ public class ApiConfig {
     @Bean
     public RestTemplate getRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setErrorHandler(new ApiResponseErrorHandler());
         restTemplate.setInterceptors(Collections.singletonList(new ApiHeaderInterceptor(externalApiKey)));
         return restTemplate;
     }
