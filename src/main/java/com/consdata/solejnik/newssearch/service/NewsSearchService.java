@@ -4,5 +4,7 @@ import com.consdata.solejnik.newssearch.dto.Articles;
 
 public interface NewsSearchService {
 
-    Articles searchArticles();
+    Articles searchArticles(final String queryString,
+                            final String country,
+                            final String category);
 }

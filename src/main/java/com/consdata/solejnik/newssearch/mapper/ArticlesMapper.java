@@ -3,7 +3,6 @@ package com.consdata.solejnik.newssearch.mapper;
 import com.consdata.solejnik.newssearch.dto.Articles;
 import com.consdata.solejnik.newssearch.externalapi.dto.ExternalArticles;
 import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
 
 public class ArticlesMapper {
 
@@ -14,8 +13,8 @@ public class ArticlesMapper {
     }
 
     public Articles map(@NonNull final ExternalArticles externalArticles,
-                        @Nullable final String country,
-                        @Nullable final String category) {
+                        @NonNull final String country,
+                        @NonNull final String category) {
 
         return Articles
                 .builder()
