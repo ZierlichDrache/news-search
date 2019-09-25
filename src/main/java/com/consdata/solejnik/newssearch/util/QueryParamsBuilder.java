@@ -1,9 +1,10 @@
 package com.consdata.solejnik.newssearch.util;
 
+import com.consdata.solejnik.newssearch.exception.MissingPageParamsException;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
-public final class QueryParamsBuilder {
+public class QueryParamsBuilder {
 
     private StringBuilder sb;
 
@@ -54,10 +55,6 @@ public final class QueryParamsBuilder {
         return this;
     }
 
-    public QueryParamsBuilder builder() {
-        return new QueryParamsBuilder();
-    }
-
     public String buildQueryString() {
 
         validateQueryParams();
@@ -76,7 +73,7 @@ public final class QueryParamsBuilder {
 
     private void validateQueryParams() {
         if ((pageSize != null && page == null) || (pageSize == null && page != null)) {
-            throw new RuntimeException();
+            throw new MissingPageParamsException("Missing pageSize or page param.");
         }
     }
 

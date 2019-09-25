@@ -27,7 +27,6 @@ public class NewsController {
                                @RequestParam(value = "pageSize", required = false) final Long pageSize,
                                @RequestParam(value = "page", required = false) final Long page) {
         final QueryParamsBuilder paramsBuilder = new QueryParamsBuilder()
-                .builder()
                 .country(country)
                 .category(category)
                 .query(query)
