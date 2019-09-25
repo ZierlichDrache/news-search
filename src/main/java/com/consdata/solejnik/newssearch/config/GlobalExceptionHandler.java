@@ -1,6 +1,7 @@
 package com.consdata.solejnik.newssearch.config;
 
 import com.consdata.solejnik.newssearch.exception.JsonParsingException;
+import com.consdata.solejnik.newssearch.exception.MissingPageParamsException;
 import com.consdata.solejnik.newssearch.newsapi.exception.BadRequest;
 import com.consdata.solejnik.newssearch.newsapi.exception.ServerError;
 import com.consdata.solejnik.newssearch.newsapi.exception.TooManyRequests;
@@ -38,5 +39,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(JsonParsingException.class)
     public ResponseEntity<String> handleJsonParsingException(@NonNull final Exception ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(MissingPageParamsException.class)
+    public ResponseEntity<String> handleMissingPageParamsException(@NonNull final Exception ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }

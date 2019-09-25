@@ -7,7 +7,6 @@ public final class QueryParamsBuilder {
 
     private StringBuilder sb;
 
-
     private String country;
 
     private String category;

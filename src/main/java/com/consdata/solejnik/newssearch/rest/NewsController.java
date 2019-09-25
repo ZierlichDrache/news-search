@@ -16,16 +16,16 @@ public class NewsController {
     private NewsSearchService service;
 
     @Autowired
-    public NewsController(@NonNull final  NewsSearchService service) {
+    public NewsController(@NonNull final NewsSearchService service) {
         this.service = service;
     }
 
     @GetMapping("/news/{country}/{category}")
-    public News searchArticles(@PathVariable(value = "country", required = false) String country,
-                               @PathVariable(value = "category", required = false) String category,
-                               @RequestParam(value = "q", required = false) String query,
-                               @RequestParam(value = "pageSize", required = false) Long pageSize,
-                               @RequestParam(value = "page", required = false) Long page) {
+    public News searchArticles(@PathVariable final String country,
+                               @PathVariable final String category,
+                               @RequestParam(value = "q", required = false) final String query,
+                               @RequestParam(value = "pageSize", required = false) final Long pageSize,
+                               @RequestParam(value = "page", required = false) final Long page) {
         final QueryParamsBuilder paramsBuilder = new QueryParamsBuilder()
                 .builder()
                 .country(country)
