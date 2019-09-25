@@ -1,4 +1,4 @@
-package com.consdata.solejnik.newssearch.externalapi.dto;
+package com.consdata.solejnik.newssearch.newsapi.dto;
 
 public class ResponseErrorBody {
 

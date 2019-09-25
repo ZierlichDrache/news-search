@@ -1,8 +1,12 @@
 package com.consdata.solejnik.newssearch.util;
 
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
 public final class QueryParamsBuilder {
 
     private StringBuilder sb;
+
 
     private String country;
 
@@ -14,36 +18,44 @@ public final class QueryParamsBuilder {
 
     private Long page;
 
-    private QueryParamsBuilder() {
+    public String getCountryPathVariable() {
+        return country;
+    }
+
+    public String getCategoryPathVariable() {
+        return category;
+    }
+
+    public QueryParamsBuilder() {
         sb = new StringBuilder();
     }
 
-    public QueryParamsBuilder country(final String country) {
+    public QueryParamsBuilder country(@NonNull final String country) {
         this.country = country;
         return this;
     }
 
-    public QueryParamsBuilder category(final String category) {
+    public QueryParamsBuilder category(@NonNull final String category) {
         this.category = category;
         return this;
     }
 
-    public QueryParamsBuilder query(final String query) {
+    public QueryParamsBuilder query(@Nullable final String query) {
         this.query = query;
         return this;
     }
 
-    public QueryParamsBuilder pageSize(final Long pageSize) {
+    public QueryParamsBuilder pageSize(@Nullable final Long pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
-    public QueryParamsBuilder page(final Long page) {
+    public QueryParamsBuilder page(@Nullable final Long page) {
         this.page = page;
         return this;
     }
 
-    public static QueryParamsBuilder builder() {
+    public QueryParamsBuilder builder() {
         return new QueryParamsBuilder();
     }
 

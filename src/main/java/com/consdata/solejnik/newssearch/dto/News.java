@@ -1,12 +1,10 @@
 package com.consdata.solejnik.newssearch.dto;
 
-import com.consdata.solejnik.newssearch.externalapi.dto.ExternalArticle;
-import com.consdata.solejnik.newssearch.mapper.ArticleMapper;
+import org.springframework.lang.NonNull;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
-public class Articles {
+public class News {
 
     private String country;
 
@@ -32,10 +30,7 @@ public class Articles {
 
     public static class Builder {
 
-        private ArticleMapper articleMapper;
-
-        public Builder() {
-            this.articleMapper = new ArticleMapper();
+        private Builder() {
         }
 
         private String country;
@@ -44,25 +39,23 @@ public class Articles {
 
         private Collection<Article> articles;
 
-        public Builder country(final String country) {
+        public Builder country(@NonNull final String country) {
             this.country = country;
             return this;
         }
 
-        public Builder category(final String category) {
+        public Builder category(@NonNull final String category) {
             this.category = category;
             return this;
         }
 
-        public Builder articles(final Collection<ExternalArticle> articles) {
-            this.articles = articles
-                    .stream()
-                    .map(article -> articleMapper.map(article)).collect(Collectors.toList());
+        public Builder articles(@NonNull final Collection<Article> articles) {
+            this.articles = articles;
             return this;
         }
 
-        public Articles build() {
-            final Articles articles = new Articles();
+        public News build() {
+            final News articles = new News();
 
             articles.country = this.country;
             articles.category = this.category;

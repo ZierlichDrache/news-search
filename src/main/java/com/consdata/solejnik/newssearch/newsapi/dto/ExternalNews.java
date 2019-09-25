@@ -1,8 +1,8 @@
-package com.consdata.solejnik.newssearch.externalapi.dto;
+package com.consdata.solejnik.newssearch.newsapi.dto;
 
 import java.util.Collection;
 
-public class ExternalArticles {
+public class ExternalNews {
 
     private Collection<ExternalArticle> articles;
 

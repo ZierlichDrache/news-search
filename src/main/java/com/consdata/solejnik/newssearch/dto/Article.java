@@ -1,5 +1,7 @@
 package com.consdata.solejnik.newssearch.dto;
 
+import org.springframework.lang.Nullable;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -74,38 +76,38 @@ public class Article {
 
         private String imageUrl;
 
-        public Builder author(final String author) {
+        public Builder author(@Nullable final String author) {
             this.author = author;
             return this;
         }
 
-        public Builder title(final String title) {
+        public Builder title(@Nullable final String title) {
             this.title = title;
             return this;
         }
 
-        public Builder description(final String description) {
+        public Builder description(@Nullable final String description) {
             this.description = description;
             return this;
         }
 
-        public Builder date(final Date date) {
+        public Builder date(@Nullable final Date date) {
             this.date = dateFormat.format(date);
             return this;
         }
 
-        public Builder sourceName(final String sourceName) {
+        public Builder sourceName(@Nullable final String sourceName) {
 
             this.sourceName = sourceName;
             return this;
         }
 
-        public Builder articleUrl(final String articleUrl) {
+        public Builder articleUrl(@Nullable final String articleUrl) {
             this.articleUrl = articleUrl;
             return this;
         }
 
-        public Builder imageUrl(final String imageUrl) {
+        public Builder imageUrl(@Nullable final String imageUrl) {
             this.imageUrl = imageUrl;
             return this;
         }
