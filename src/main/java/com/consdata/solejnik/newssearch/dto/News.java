@@ -2,6 +2,7 @@ package com.consdata.solejnik.newssearch.dto;
 
 import org.springframework.lang.NonNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class News {
@@ -10,7 +11,7 @@ public class News {
 
     private String category;
 
-    private Collection<Article> articles;
+    private Collection<Article> articles = new ArrayList<>();
 
     public static Builder builder() {
         return new Builder();

@@ -1,10 +1,11 @@
 package com.consdata.solejnik.newssearch.newsapi.dto;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class ExternalNews {
 
-    private Collection<ExternalArticle> articles;
+    private Collection<ExternalArticle> articles = new ArrayList<>();
 
     private String status;
 

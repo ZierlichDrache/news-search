@@ -3,7 +3,7 @@ package com.consdata.solejnik.newssearch.config;
 import com.consdata.solejnik.newssearch.exception.JsonParsingException;
 import com.consdata.solejnik.newssearch.exception.MissingPageParamsException;
 import com.consdata.solejnik.newssearch.newsapi.exception.BadRequest;
-import com.consdata.solejnik.newssearch.newsapi.exception.ServerError;
+import com.consdata.solejnik.newssearch.newsapi.exception.ExternalServerError;
 import com.consdata.solejnik.newssearch.newsapi.exception.TooManyRequests;
 import com.consdata.solejnik.newssearch.newsapi.exception.Unauthorized;
 import org.springframework.http.HttpStatus;
@@ -31,8 +31,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.TOO_MANY_REQUESTS);
     }
 
-    @ExceptionHandler(ServerError.class)
-    public ResponseEntity<String> handleServerError(@NonNull final Exception ex) {
+    @ExceptionHandler(ExternalServerError.class)
+    public ResponseEntity<String> handleExternalServerError(@NonNull final Exception ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.SERVICE_UNAVAILABLE);
     }
 

@@ -3,7 +3,7 @@ package com.consdata.solejnik.newssearch.newsapi.config;
 import com.consdata.solejnik.newssearch.exception.JsonParsingException;
 import com.consdata.solejnik.newssearch.newsapi.dto.ResponseErrorBody;
 import com.consdata.solejnik.newssearch.newsapi.exception.BadRequest;
-import com.consdata.solejnik.newssearch.newsapi.exception.ServerError;
+import com.consdata.solejnik.newssearch.newsapi.exception.ExternalServerError;
 import com.consdata.solejnik.newssearch.newsapi.exception.TooManyRequests;
 import com.consdata.solejnik.newssearch.newsapi.exception.Unauthorized;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,7 +42,7 @@ public class CustomResponseErrorHandler implements ResponseErrorHandler {
         }
 
         if (response.getStatusCode().value() == 500) {
-            throw new ServerError(message);
+            throw new ExternalServerError(message);
         }
 
     }
