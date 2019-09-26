@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NewsController {
 
-    private static final Logger logger = LoggerFactory.getLogger(NewsController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(NewsController.class);
 
     private NewsSearchService service;
 
@@ -30,7 +30,7 @@ public class NewsController {
                                @RequestParam(value = "q", required = false) final String query,
                                @RequestParam(value = "pageSize", required = false) final Long pageSize,
                                @RequestParam(value = "page", required = false) final Long page) {
-        logger.info("Initializing searching for the articles");
+        LOGGER.info("Initializing searching for the articles");
 
         final QueryParamsBuilder paramsBuilder = new QueryParamsBuilder()
                 .country(country)
@@ -41,7 +41,7 @@ public class NewsController {
 
         final News news = service.searchNews(paramsBuilder);
 
-        logger.info("Completed searching for the articles");
+        LOGGER.info("Completed searching for the articles");
 
         return news;
     }

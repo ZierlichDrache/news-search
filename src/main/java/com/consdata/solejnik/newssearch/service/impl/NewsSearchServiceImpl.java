@@ -16,7 +16,7 @@ import java.util.Collection;
 @Service
 public class NewsSearchServiceImpl implements NewsSearchService {
 
-    private static final Logger logger = LoggerFactory.getLogger(NewsSearchServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(NewsSearchServiceImpl.class);
 
     private NewsApiClient newsApiClient;
 
@@ -27,7 +27,7 @@ public class NewsSearchServiceImpl implements NewsSearchService {
 
     @Override
     public News searchNews(@NonNull final QueryParamsBuilder paramsBuilder) {
-        logger.info("Initializing searching for the news");
+        LOGGER.info("Initializing searching for the news");
 
         final Collection<Article> articles = newsApiClient.searchArticles(paramsBuilder.buildQueryString());
 
@@ -38,7 +38,7 @@ public class NewsSearchServiceImpl implements NewsSearchService {
                 .articles(articles)
                 .build();
 
-        logger.info("Completed searching for the articles");
+        LOGGER.info("Completed searching for the articles");
 
         return news;
     }
