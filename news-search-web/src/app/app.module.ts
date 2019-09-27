@@ -7,6 +7,7 @@ import { SearchHeaderComponent } from './search-header/search-header.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { SearchDropdownsComponent } from './search-dropdowns/search-dropdowns.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchDropdownsComponent } from './search-dropdowns/search-dropdowns.co
     BrowserModule,
     NoopAnimationsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

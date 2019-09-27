@@ -1,0 +1,19 @@
+.content {
+    background-color: rgb(77,208,226);
+    min-width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+mat-form-field {
+    margin-left: 15px;
+}
