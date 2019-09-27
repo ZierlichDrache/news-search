@@ -1,0 +1,9 @@
+<div class="content">
+    <mat-form-field >
+        <mat-icon matPrefix>
+            search
+        </mat-icon>
+        <input  (keyup)="onKeyUp($event.target.value)"   
+                matInput placeholder="Search for articles">
+    </mat-form-field>
+</div>
