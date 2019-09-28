@@ -12,6 +12,6 @@ export class ArticlesService {
 
   searchArticles(): Observable<News> {
  
-    return this.http.get<News>('http://localhost:8080/news/pl/sports' );
+    return this.http.get<News>('/news/pl/sports' );
   }
 }
