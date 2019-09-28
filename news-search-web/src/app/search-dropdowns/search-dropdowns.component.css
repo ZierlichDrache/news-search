@@ -5,7 +5,6 @@
 
     display: flex;
     align-items: center;
-    padding-left: 5px;
 }
 
 .dropdown {
@@ -16,4 +15,14 @@
 
 mat-form-field {
     margin-left: 15px;
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    .content {
+        justify-content: center;
+    }
+
+    mat-label:not(.placeholder) {
+        display: none;
+    }
 }

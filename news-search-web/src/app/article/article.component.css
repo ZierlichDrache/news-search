@@ -29,7 +29,6 @@ button {
 .details {
     width: 490px;
     height: 70px;
-    background-color: red;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 
@@ -39,14 +38,16 @@ button {
 .author {
     width: 360px;
     height: 70px; 
-    background-color: white;
 
     color: black;
+    background-color: white;
     font-weight: bold;
 
     display: flex;
     align-items: center;
     padding-left: 15px;
+
+    border-bottom-left-radius: inherit;
 }
 
 .date {
@@ -59,4 +60,18 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-bottom-right-radius: inherit;
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    .image {
+        width: 370px;
+        height: 250px;
+    }
+
+    .details {
+        width: 370px;
+        height: 70px;
+    }
 }

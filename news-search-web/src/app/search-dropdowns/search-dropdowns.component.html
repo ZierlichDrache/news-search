@@ -7,11 +7,13 @@
             Select news language
         </mat-label>
         <mat-form-field>
-            <mat-label>
+            <mat-label class="placeholder">
                 All countries
             </mat-label>
-            <mat-select (selectionChange)="onCountryChange($event)">
-                <mat-option *ngFor="let country of countries" [value]="country">
+            <mat-select (selectionChange)="onCountryChange($event)" 
+                        [value]="countries[0]">
+                <mat-option *ngFor="let country of countries" 
+                            [value]="country">
                     {{country}}
                 </mat-option>
             </mat-select>
@@ -25,14 +27,17 @@
                 Select news category
             </mat-label>
             <mat-form-field>
-                <mat-label>
+                <mat-label class="placeholder">
                     All categories
                 </mat-label>
-                <mat-select (selectionChange)="onCategoryChange($event)">
-                    <mat-option *ngFor="let category of categories" [value]="category">
+                <mat-select (selectionChange)="onCategoryChange($event)"    
+                            [value]="categories[0]">
+                    <mat-option *ngFor="let category of categories" 
+                                [value]="category">
                         {{category}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
 </div>
+ 

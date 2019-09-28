@@ -38,4 +38,6 @@ export class SearchDropdownsComponent implements OnInit {
   get categories(): string[] {
     return this._categories;
   }
+
+  selected = 'Abba';
 }
