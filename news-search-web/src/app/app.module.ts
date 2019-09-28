@@ -13,6 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ArticleComponent } from './article/article.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticlesComponent } from './articles/articles.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ArticlesComponent } from './articles/articles.component';
     MatIconModule,
     MatSelectModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

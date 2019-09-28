@@ -39,5 +39,5 @@ export class SearchDropdownsComponent implements OnInit {
     return this._categories;
   }
 
-  selected = 'Abba';
+  some = window.screen.width;
 }

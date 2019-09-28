@@ -14,13 +14,22 @@ header {
     background-color: rgb(221,221,221);
     min-width: 100%;
     min-height: 75%;
-
-    display: flex;
-    align-items: center;
 }
 
 footer {
     background-color: rgb(0,188,213);
     min-width: 100%;
     min-height: 9%; 
+}
+
+@media (max-width:767px) {
+    .content {
+        min-width: 100vh;
+        padding: 0;
+    }
+
+    footer {
+        min-height: 100vh; 
+        min-width: 100vh; 
+    }
 }

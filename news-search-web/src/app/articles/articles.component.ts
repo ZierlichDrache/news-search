@@ -10,7 +10,7 @@ export class ArticlesComponent implements OnInit {
 
   articles: Article[] = [];
   
-  constructor() { }
+
 
   ngOnInit() {
     const  article = {
@@ -23,11 +23,8 @@ export class ArticlesComponent implements OnInit {
       imageUrl:'https://bi.im-g.pl/im/3b/06/18/z25191995FBW.jpg'
     } as Article
 
-    this.articles.push(article);
-    this.articles.push(article);
-    this.articles.push(article);
-    this.articles.push(article);
- 
+    this.articles.push(article); 
+    this.articles.push(article); 
+    this.articles.push(article); 
   }
-
 }
