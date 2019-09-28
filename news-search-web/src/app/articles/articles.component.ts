@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../shared/dtos';
 
 @Component({
@@ -8,10 +8,9 @@ import { Article } from '../shared/dtos';
 })
 export class ArticlesComponent implements OnInit {
 
+  @Input()
   articles: Article[] = [];
   
-
-
   ngOnInit() {
     const  article = {
       author: 'stefan i wicio',

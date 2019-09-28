@@ -10,7 +10,7 @@
     </div>
     <div    class="details">
         <div    class="author">
-            Article by {{article.author}}
+            Article by {{article.author?article.author: 'unknown'}}
         </div>
         <div    class="date">
             {{article.date}}

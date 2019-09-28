@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { LayoutService, Layout } from '../shared/layout.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-paginated-footer',
@@ -8,9 +9,29 @@ import { LayoutService, Layout } from '../shared/layout.service';
 })
 export class PaginatedFooterComponent implements OnInit {
 
-  constructor(public readonly layoutService: LayoutService) { }
+  private _pageLenght = 5;
+
+  @Input()
+  set pageLenght(pageLenght: number) {
+    console.log(pageLenght);
+      this._pageLenght = pageLenght;
+  }
+
+  get pageLenght(): number {
+    return this._pageLenght;
+  }
+
+  @Output()
+  pageChangedEvent: EventEmitter<Page> = new EventEmitter();
+
+  constructor(private readonly layoutService: LayoutService) { }
 
   ngOnInit() {
+    this.onPageChange({pageIndex: 0} as PageEvent);
+  }
+
+  onPageChange(pageEvent: PageEvent) {
+    this.pageChangedEvent.emit({ pageEvent, pageSize: this.pageSize });
   }
 
   get pageSize(): number {
@@ -27,5 +48,9 @@ export class PaginatedFooterComponent implements OnInit {
       }
     }
   }
+}
 
+export interface Page {
+  pageEvent: PageEvent,
+  pageSize: number;
 }

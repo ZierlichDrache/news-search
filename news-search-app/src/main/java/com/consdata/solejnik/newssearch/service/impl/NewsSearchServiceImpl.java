@@ -2,6 +2,7 @@ package com.consdata.solejnik.newssearch.service.impl;
 
 import com.consdata.solejnik.newssearch.dto.Article;
 import com.consdata.solejnik.newssearch.dto.News;
+import com.consdata.solejnik.newssearch.dto.PaginatedArticles;
 import com.consdata.solejnik.newssearch.newsapi.client.NewsApiClient;
 import com.consdata.solejnik.newssearch.service.NewsSearchService;
 import com.consdata.solejnik.newssearch.util.QueryParamsBuilder;
@@ -29,13 +30,14 @@ public class NewsSearchServiceImpl implements NewsSearchService {
     public News searchNews(@NonNull final QueryParamsBuilder paramsBuilder) {
         LOGGER.info("Initializing searching for the news");
 
-        final Collection<Article> articles = newsApiClient.searchArticles(paramsBuilder.buildQueryString());
+        final PaginatedArticles paginatedArticles = newsApiClient.searchArticles(paramsBuilder.buildQueryString());
 
         News news = News
                 .builder()
                 .country(paramsBuilder.getCountryPathVariable())
                 .category(paramsBuilder.getCategoryPathVariable())
-                .articles(articles)
+                .articles(paginatedArticles.getArticles())
+                .totalResults(paginatedArticles.getTotalResult())
                 .build();
 
         LOGGER.info("Completed searching for the articles");

@@ -12,5 +12,6 @@ export interface Article {
 export interface News {
     country: string,
     category: string,
-    articles: Article[]
+    articles: Article[],
+    totalResults: number
 }

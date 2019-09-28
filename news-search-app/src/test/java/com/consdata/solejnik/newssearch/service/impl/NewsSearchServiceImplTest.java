@@ -1,5 +1,6 @@
 package com.consdata.solejnik.newssearch.service.impl;
 
+import com.consdata.solejnik.newssearch.dto.PaginatedArticles;
 import com.consdata.solejnik.newssearch.newsapi.client.NewsApiClient;
 import com.consdata.solejnik.newssearch.service.NewsSearchService;
 import com.consdata.solejnik.newssearch.util.QueryParamsBuilder;
@@ -26,7 +27,7 @@ public class NewsSearchServiceImplTest {
     @Before
     public void setup() {
         service = new NewsSearchServiceImpl(newsApiClient);
-        Mockito.when(newsApiClient.searchArticles(anyString())).thenReturn(Collections.emptyList());
+        Mockito.when(newsApiClient.searchArticles(anyString())).thenReturn(new PaginatedArticles(Collections.emptyList(), 0L));
     }
 
     @Test

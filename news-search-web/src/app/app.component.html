@@ -1,12 +1,16 @@
 <header>
-        <app-search-header></app-search-header>
+        <app-search-header (queryChangedEvent)="onQueryChangedEvent($event)">
+        </app-search-header>
 </header>
 <div class="dropdowns">
-        <app-search-dropdowns></app-search-dropdowns>
+        <app-search-dropdowns   (countryChangedEvent)="onCountryChangedEvent($event)" 
+                                (categoryChangedEvent)="onCategoryChangedEvent($event)">
+        </app-search-dropdowns>
 </div>
 <div class="content">
-        <app-articles></app-articles>
+        <app-articles [articles]="articles"></app-articles>
 </div>
 <footer>
-        <app-paginated-footer></app-paginated-footer>
+        <app-paginated-footer   [pageLenght]="pageLength"   (pageChangedEvent)="onPageChange($event)">
+        </app-paginated-footer>
 </footer>

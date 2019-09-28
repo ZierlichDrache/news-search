@@ -10,8 +10,8 @@
             <mat-label class="placeholder">
                 All countries
             </mat-label>
-            <mat-select (selectionChange)="onCountryChange($event)" 
-                        [value]="countries[0]">
+            <mat-select (selectionChange)="onCountryChange($event.value)" 
+                        [value]="'pl'">
                 <mat-option *ngFor="let country of countries" 
                             [value]="country">
                     {{country}}
@@ -30,8 +30,8 @@
                 <mat-label class="placeholder">
                     All categories
                 </mat-label>
-                <mat-select (selectionChange)="onCategoryChange($event)"    
-                            [value]="categories[0]">
+                <mat-select (selectionChange)="onCategoryChange($event.value)"    
+                            [value]="'technology'">
                     <mat-option *ngFor="let category of categories" 
                                 [value]="category">
                         {{category}}

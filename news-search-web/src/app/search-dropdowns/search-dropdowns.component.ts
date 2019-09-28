@@ -21,6 +21,9 @@ export class SearchDropdownsComponent implements OnInit {
       'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv', 'ma', 'mx', 'my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl',
       'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za'];
     this._categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
+
+    this.countryChangedEvent.emit('pl');
+    this.categoryChangedEvent.emit('technology');
   }
 
   onCountryChange(country: string) {
@@ -38,6 +41,4 @@ export class SearchDropdownsComponent implements OnInit {
   get categories(): string[] {
     return this._categories;
   }
-
-  some = window.screen.width;
 }

@@ -13,6 +13,8 @@ public class News {
 
     private Collection<Article> articles = new ArrayList<>();
 
+    private Long totalResults;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -29,6 +31,10 @@ public class News {
         return articles;
     }
 
+    public Long getTotalResults() {
+        return totalResults;
+    }
+
     public static class Builder {
 
         private Builder() {
@@ -39,6 +45,8 @@ public class News {
         private String category;
 
         private Collection<Article> articles;
+
+        private Long totalResults;
 
         public Builder country(@NonNull final String country) {
             this.country = country;
@@ -55,14 +63,20 @@ public class News {
             return this;
         }
 
+        public Builder totalResults(@NonNull final Long totalResults) {
+            this.totalResults = totalResults;
+            return this;
+        }
+
         public News build() {
-            final News articles = new News();
+            final News news = new News();
 
-            articles.country = this.country;
-            articles.category = this.category;
-            articles.articles = this.articles;
+            news.country = this.country;
+            news.category = this.category;
+            news.articles = this.articles;
+            news.totalResults = this.totalResults;
 
-            return articles;
+            return news;
         }
     }
 }
