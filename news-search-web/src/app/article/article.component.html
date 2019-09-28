@@ -1,0 +1,17 @@
+<div   class="image"
+       [ngStyle]="{ 'background-image': 'url(' + article.imageUrl + ')'}">
+    <button (click)="gotoArticle()">
+        Read article
+    </button>
+    <mat-label>
+        {{article.description}}
+    </mat-label>
+</div>
+<div    class="details">
+    <div    class="author">
+        Article by {{article.author}}
+    </div>
+    <div    class="date">
+        {{article.date}}
+    </div>
+</div>

@@ -10,13 +10,18 @@ import { SearchDropdownsComponent } from './search-dropdowns/search-dropdowns.co
 import { MatSelectModule } from '@angular/material/select';
 import { PaginatedFooterComponent } from './paginated-footer/paginated-footer.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ArticleComponent } from './article/article.component';
+import {MatButtonModule} from '@angular/material/button';
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchHeaderComponent,
     SearchDropdownsComponent,
-    PaginatedFooterComponent
+    PaginatedFooterComponent,
+    ArticleComponent,
+    ArticlesComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

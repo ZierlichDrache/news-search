@@ -1,0 +1,62 @@
+.image {
+    width: 490px;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+mat-label {
+    color: white;
+    margin: 5px;
+    font-size: 12px;
+}
+
+button {
+    margin: 5px;
+    color: white;
+    background-color: rgb(77,208,226);
+ 
+    border: 0;
+    border-radius: 5px;
+}
+
+.details {
+    width: 490px;
+    height: 70px;
+    background-color: red;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    display: flex;
+}
+
+.author {
+    width: 360px;
+    height: 70px; 
+    background-color: white;
+
+    color: black;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.date {
+    width: 130px;
+    height: 70px; 
+    background-color: rgb(253, 215, 52);
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
