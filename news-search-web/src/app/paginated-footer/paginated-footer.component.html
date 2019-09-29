@@ -1,0 +1,14 @@
+<div class="content">
+    <mat-paginator  [length]="pageLenght"
+                    [pageSize]="pageSize" 
+                    (page)="onPageChange($event)">
+    </mat-paginator>    
+
+    <mat-label>
+        Powered by 
+        <a  href="http://newsapi.org"  
+            target="_blank">
+            newsapi
+        </a>
+    </mat-label>
+</div>

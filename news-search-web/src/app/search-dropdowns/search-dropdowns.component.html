@@ -1,0 +1,43 @@
+<div class="content">
+    <div class="dropdown">
+        <mat-icon matPrefix>
+            language
+        </mat-icon>
+        <mat-label>
+            Select news language
+        </mat-label>
+        <mat-form-field>
+            <mat-label class="placeholder">
+                All countries
+            </mat-label>
+            <mat-select (selectionChange)="onCountryChange($event.value)" 
+                        [value]="'pl'">
+                <mat-option *ngFor="let country of countries" 
+                            [value]="country">
+                    {{country}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="dropdown">
+            <mat-icon matPrefix>
+                motorcycle
+            </mat-icon>
+            <mat-label>
+                Select news category
+            </mat-label>
+            <mat-form-field>
+                <mat-label class="placeholder">
+                    All categories
+                </mat-label>
+                <mat-select (selectionChange)="onCategoryChange($event.value)"    
+                            [value]="'technology'">
+                    <mat-option *ngFor="let category of categories" 
+                                [value]="category">
+                        {{category}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+</div>
+ 
