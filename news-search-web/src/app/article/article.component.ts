@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Article } from '../shared/dtos';
 
 @Component({
@@ -9,9 +9,7 @@ import { Article } from '../shared/dtos';
 export class ArticleComponent {
 
   @Input()
-  article: Article;
-
-  constructor() { }
+  article: Article = {} as Article;
 
   openArticle() {
     window.open(this.article.articleUrl);

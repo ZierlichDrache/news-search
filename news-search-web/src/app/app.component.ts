@@ -13,13 +13,12 @@ export class AppComponent {
 
   pageLength: number;
 
-  private _articles: Article[];
+  private _articles: Article[] = [];
   private searchQuery: SearchArticleQuery;
 
   constructor(private readonly service: ArticlesService) { }
 
   ngOnInit() {
-    this._articles = [];
     this.searchQuery = new SearchArticleQuery();
   }
 
@@ -45,9 +44,8 @@ export class AppComponent {
   }
 
   private updateArticles() {
-    console.log(this.searchQuery);
+
     if (this.searchQuery.isValid) {
-      console.log('asdasdasdasdasd');
       this.service.searchArticles(this.searchQuery).subscribe(news => {
         this._articles = news.articles;
         this.pageLength = news.totalResults;

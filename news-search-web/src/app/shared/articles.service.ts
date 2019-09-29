@@ -13,7 +13,6 @@ export class ArticlesService {
 
   searchArticles(searchQuery: SearchArticleQuery): Observable<News> {
     const url = `/news${searchQuery.searchUrl}`
-    console.log(url);
     return this.http.get<News>(url);
   }
 }

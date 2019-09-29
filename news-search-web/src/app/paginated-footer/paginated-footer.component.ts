@@ -13,12 +13,7 @@ export class PaginatedFooterComponent implements OnInit {
 
   @Input()
   set pageLenght(pageLenght: number) {
-    console.log(pageLenght);
       this._pageLenght = pageLenght;
-  }
-
-  get pageLenght(): number {
-    return this._pageLenght;
   }
 
   @Output()
@@ -47,6 +42,10 @@ export class PaginatedFooterComponent implements OnInit {
         return 2;
       }
     }
+  }
+
+  get pageLenght(): number {
+    return this._pageLenght;
   }
 }
 
