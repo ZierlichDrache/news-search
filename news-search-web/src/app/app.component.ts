@@ -3,7 +3,7 @@ import { ArticlesService } from './shared/articles.service';
 import { Page } from './paginated-footer/paginated-footer.component';
 import { SearchArticleQuery } from './shared/search-article-query';
 import { Article } from './shared/dtos';
-
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,12 +44,13 @@ export class AppComponent {
   }
 
   private updateArticles() {
-
     if (this.searchQuery.isValid) {
-      this.service.searchArticles(this.searchQuery).subscribe(news => {
-        this._articles = news.articles;
-        this.pageLength = news.totalResults;
-      });
+      this.service.searchArticles(this.searchQuery)
+        .pipe(first())
+        .subscribe(news => {
+          this._articles = news.articles;
+          this.pageLength = news.totalResults;
+        });
     }
   }
 
