@@ -39,6 +39,6 @@ To create a docker container build the app (more info under Build and deploy the
 - for linux: sudo docker build -f Dockerfile -t news-search .
 
 To run the container with the news sarch app stay in the root folder and run in the console/terminal
-- docker run -p 8080:8080 news-search
+- for linux: sudo docker run -p 8080:8080 news-search
 
 Now the application is available under url http://localhost:8080/
