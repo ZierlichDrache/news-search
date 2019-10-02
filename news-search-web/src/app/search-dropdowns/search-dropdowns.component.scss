@@ -1,0 +1,49 @@
+@import '../../styles.scss';
+
+.content {
+  background-color: $color-turkey;
+  min-width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  @media (min-width:$tablet-width) and (max-width:$laptop-width) {
+    justify-content: center;
+  }
+
+  @media (max-width:$mobile-width) {
+    min-width: 100vh;
+    justify-content: space-around;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+    mat-form-field {
+      margin-left: 15px;
+    }
+
+    @media (min-width:$tablet-width) and (max-width:$laptop-width) {
+      mat-label:not(.placeholder) {
+        display: none;
+      }
+    }
+
+    @media (max-width:$mobile-width) {
+
+      margin-left: 0;
+
+      mat-label:not(.placeholder) {
+        display: none;
+      }
+
+      mat-form-field {
+        margin-left: 0;
+      }
+    }
+  }
+}
+

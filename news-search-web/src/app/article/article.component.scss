@@ -1,0 +1,80 @@
+@import '../../styles.scss';
+
+$article-height: 70px;
+$article-default-width: 490px;
+
+.image {
+  width: $article-default-width;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+
+  mat-label {
+    color: $color-white;
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  button {
+    margin: 5px;
+    color: $color-white;
+    background-color: $color-turkey;
+
+    border: 0;
+    border-radius: 5px;
+  }
+
+  @media (min-width:$tablet-width) and (max-width:$laptop-width) {
+    width: 370px;
+    height: 250px;
+  }
+}
+
+.details {
+    width: $article-default-width;
+    height: $article-height;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    display: flex;
+
+  .author {
+    width: 75%;
+    height: $article-height;
+
+    color: $color-black;
+    background-color: $color-white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+
+    border-bottom-left-radius: inherit;
+  }
+
+  .date {
+    width: 25%;
+    height: $article-height;
+    background-color: $color-yellow;
+    color: $color-white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom-right-radius: inherit;
+  }
+
+  @media (min-width:$tablet-width) and (max-width:$laptop-width) {
+    width: 370px;
+    height: $article-height;
+  }
+}

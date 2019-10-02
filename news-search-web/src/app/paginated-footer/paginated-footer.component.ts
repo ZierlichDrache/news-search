@@ -4,7 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-paginated-footer',
   templateUrl: './paginated-footer.component.html',
-  styleUrls: ['./paginated-footer.component.css']
+  styleUrls: ['./paginated-footer.component.scss']
 })
 export class PaginatedFooterComponent implements OnInit {
 
