@@ -1,0 +1,39 @@
+@import '../styles.scss';
+
+.edge-block {
+  background-color: $color-blue;
+  min-width: 100%;
+  min-height: 9%;
+}
+
+header {
+  @extend .edge-block;
+}
+
+.dropdowns {
+  background-color: $color-turkey;
+  min-width: 100%;
+  min-height: 7%;
+}
+
+.content {
+  background-color: $color-grey;
+  min-width: 100%;
+  min-height: 75%;
+  max-height: 75%;
+  overflow: auto;
+
+  @media (max-width:767px) {
+    min-width: 100vh;
+    padding: 0;
+  }
+}
+
+footer {
+  @extend .edge-block;
+
+  @media (max-width:767px) {
+    min-height: 20vh;
+    min-width: 100vh;
+  }
+}

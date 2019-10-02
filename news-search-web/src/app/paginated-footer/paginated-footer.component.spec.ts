@@ -2,16 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaginatedFooterComponent } from './paginated-footer.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LayoutService, Layout } from '../shared/layout.service';
 import { PageEvent } from '@angular/material/paginator';
 
 describe('PaginatedFooterComponent unit', () => {
-  let service: LayoutService;
   let component: PaginatedFooterComponent;
 
   beforeEach(() => {
-    service = { screenLayout: Layout.Laptop } as LayoutService;
-    component = new PaginatedFooterComponent(service);
+    component = new PaginatedFooterComponent();
   });
 
   it('should create', () => {
@@ -27,7 +24,7 @@ describe('PaginatedFooterComponent unit', () => {
     component.ngOnInit();
 
     // then
-    expect(component.onPageChange).toHaveBeenCalled();;
+    expect(component.onPageChange).toHaveBeenCalled();
   });
 
   it('should emit pageChangedEvent when onPageChange is called', () => {
@@ -42,10 +39,40 @@ describe('PaginatedFooterComponent unit', () => {
     expect(component.pageChangedEvent.emit).toHaveBeenCalled();
   });
 
-  it('should page size be six when screen layout from service is Laptop', () => {
+  it('should page size be six when window.innerWidth is more than 1200', () => {
+
+    // given
+    spyOnProperty(window, 'innerWidth').and.returnValue(1300);
+
+    // when
+    component.ngOnInit();
 
     // then
     expect(component.pageSize).toBe(6);
+  });
+
+  it('should page size be four when window.innerWidth is between 1200 and 769', () => {
+
+    // given
+    spyOnProperty(window, 'innerWidth').and.returnValue(769);
+
+    // when
+    component.ngOnInit();
+
+    // then
+    expect(component.pageSize).toBe(4);
+  });
+
+  it('should page size be 2 when window.innerWidth is less than 769', () => {
+
+    // given
+    spyOnProperty(window, 'innerWidth').and.returnValue(768);
+
+    // when
+    component.ngOnInit();
+
+    // then
+    expect(component.pageSize).toBe(2);
   });
 });
 

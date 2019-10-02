@@ -66,28 +66,4 @@
             <version>2.9.2</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.2.1</version>
-                    <configuration>
-                        <skip>true</skip>
-                        <mainClass>**undefined**</mainClass>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-
 </project>

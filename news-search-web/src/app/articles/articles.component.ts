@@ -4,7 +4,7 @@ import { Article } from '../shared/dtos';
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent  {
 

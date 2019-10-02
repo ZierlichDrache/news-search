@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-search-dropdowns',
   templateUrl: './search-dropdowns.component.html',
-  styleUrls: ['./search-dropdowns.component.css']
+  styleUrls: ['./search-dropdowns.component.scss']
 })
 export class SearchDropdownsComponent implements OnInit {
 

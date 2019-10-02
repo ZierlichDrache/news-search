@@ -3,7 +3,7 @@
         </app-search-header>
 </header>
 <div class="dropdowns">
-        <app-search-dropdowns   (countryChangedEvent)="onCountryChangedEvent($event)" 
+        <app-search-dropdowns (countryChangedEvent)="onCountryChangedEvent($event)"
                                 (categoryChangedEvent)="onCategoryChangedEvent($event)">
         </app-search-dropdowns>
 </div>
@@ -11,6 +11,7 @@
         <app-articles [articles]="articles"></app-articles>
 </div>
 <footer>
-        <app-paginated-footer   [pageLenght]="pageLength"   (pageChangedEvent)="onPageChange($event)">
+        <app-paginated-footer [pageLenght]="pageLength"
+                              (pageChangedEvent)="onPageChange($event)">
         </app-paginated-footer>
 </footer>
