@@ -21,7 +21,7 @@ button {
     margin: 5px;
     color: white;
     background-color: rgb(77,208,226);
- 
+
     border: 0;
     border-radius: 5px;
 }
@@ -36,8 +36,8 @@ button {
 }
 
 .author {
-    width: 360px;
-    height: 70px; 
+    width: 75%;
+    height: 70px;
 
     color: black;
     background-color: white;
@@ -51,8 +51,8 @@ button {
 }
 
 .date {
-    width: 130px;
-    height: 70px; 
+    width: 25%;
+    height: 70px;
     background-color: rgb(253, 215, 52);
     color: white;
     font-weight: bold;

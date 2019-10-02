@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
- 
 
 @Component({
   selector: 'app-search-header',
@@ -14,11 +13,11 @@ export class SearchHeaderComponent implements OnInit {
   private previousQuery: string;
 
   ngOnInit() {
-    this.previousQuery = "";
+    this.previousQuery = '';
   }
 
   onKeyUp(newQuery: string) {
-    if(newQuery !== this.previousQuery) {
+    if (newQuery !== this.previousQuery) {
       this.previousQuery = newQuery;
       this.queryChangedEvent.emit(newQuery);
     }
